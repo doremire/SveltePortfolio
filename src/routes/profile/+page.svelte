@@ -73,7 +73,7 @@
       <span class="text-white text-2xl">🐧</span>
     </twemoji>
   </div>
-  <h1 class="text-4xl font-semibold mb-2">Diremire</h1>
+  <h1 class="text-4xl font-semibold mb-2">Doremire</h1>
   <p class="text-gray-600">Full Stack Developer | Server Admin</p>
 </section>
 
