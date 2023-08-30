@@ -3,14 +3,15 @@
   import twemoji from "twemoji";
 
   onMount(() => {
-    twemoji.parse(document.body, { size: 32 });
+    twemoji.parse(document.body, {
+      className: "twemoji-icon",
+    });
   });
 
   let isMenuOpen = false;
 
   onMount(() => {
     // メニューが開かれたときにクリックイベントを追加
-    // @ts-ignore
     document.addEventListener("click", closeMenuOnClickOutside);
   });
 
@@ -27,12 +28,24 @@
       isMenuOpen = false;
     }
   }
+
+  let isTop = true;
+
+  onMount(() => {
+    window.addEventListener("scroll", () => {
+      isTop = window.scrollY === 0;
+    });
+  });
 </script>
 
 <div class="container">
   <!-- 全てのページでヘッダーを表示する -->
 
-  <header class="bg-blue-400 py-4">
+  <header
+    class="py-4 fixed w-full top-0 z-50 transition-all duration-300"
+    class:bg-blue-400={!isTop}
+    class:bg-transparent={isTop}
+  >
     <nav class="container flex items-center justify-between mx-5">
       <div class="text-white text-lg font-semibold">My Portfolio</div>
       <div class="menu sm:hidden">
@@ -119,9 +132,13 @@
   <style global lang="postcss">
     @tailwind base;
     @tailwind utilities;
-  </style>
+    /* @tailwind components; */
 
-  <style lang="postcss">
+    :global(.twemoji-icon) {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+    }
     .menu {
       @apply relative;
     }
@@ -172,9 +189,8 @@
   <footer class="bg-blue-400 p-6 mt-12">
     <div class="container mx-auto text-center">
       <div class="mt-4">
-        <twemoji>
-          <p class="text-white">連絡先: contact@doremire-server.com</p>
-        </twemoji>
+        <p class="text-white">連絡先: contact@doremire-server.com</p>
+
         <p class="text-white">&copy; 2023 by Doremire</p>
       </div>
     </div>
