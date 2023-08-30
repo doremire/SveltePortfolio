@@ -61,7 +61,7 @@
 <!-- ヒーローセクション -->
 
 <section class="bg-black py-10">
-  <h1 class="text-4xl font-bold m-4 text-gray-400">snapshot</h1>
+  <!-- <h1 class="text-4xl font-bold m-4 text-gray-400">snapshot</h1>
   <div class="flex overflow-x-scroll my-10">
     <img
       class="w-64 h-48 mx-2 rounded-md shadow-lg"
@@ -93,7 +93,7 @@
       src="https://via.placeholder.com/256x192?text=Project+C"
       alt="Project C"
     />
-  </div>
+  </div> -->
 
   <h1 class="text-4xl font-bold m-4 text-gray-400">history</h1>
   <div class="p-8 md:mx-36">
