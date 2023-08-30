@@ -2,9 +2,19 @@
   import { onMount } from "svelte";
   import twemoji from "twemoji";
 
+  onMount(() => {
+    twemoji.parse(document.body, {
+      className: "twemoji-icon",
+    });
+  });
+
   let projects = [
-    { title: "プロジェクトA", description: "これはテストデータAです。" },
-    { title: "プロジェクトB", description: "これはテストデータBです。" },
+    {
+      title: "cli-clock",
+      description:
+        "C言語で書かれたCLI上にアスキーアートでグラフィカルな時計を表示するアプリケーションです。",
+      github: "https://github.com/doremire/cli-clock",
+    },
     // ... 他のプロジェクトデータ
   ];
 
@@ -29,10 +39,10 @@
     //   year: "2021 (当時15歳)",
     //   content: "ライブは配信者にサムネイルを提供、及び専属",
     // },
-    {
-      year: "2021 (当時15歳)",
-      content: "iPhone OSの合法での脱獄を開始、界隈入り",
-    },
+    // {
+    //   year: "2021 (当時15歳)",
+    //   content: "iPhone OSの合法での脱獄を開始、界隈入り",
+    // },
     {
       year: "2022 (当時16歳)",
       content:
@@ -72,15 +82,15 @@
     <div class="grid grid-cols-3 gap-4">
       <div>
         <twemoji><h3 class="text-xl mb-2">🖌 デザイン</h3></twemoji>
-        <p>ユーザーフレンドリーなUI/UXデザインを提供します。</p>
+        <p>ロゴの作成などにチャレンジしてみたいです。</p>
       </div>
       <div>
         <twemoji><h3 class="text-xl mb-2">🖥 開発</h3></twemoji>
-        <p>レスポンシブなウェブサイトとアプリを開発します。</p>
+        <p>作りたいものを作ります。</p>
       </div>
       <div>
         <twemoji><h3 class="text-xl mb-2">🚀 ローンチ</h3></twemoji>
-        <p>最高のパフォーマンスを持つ製品を提供します。</p>
+        <p>人の役に立つサービスを作りたいです。</p>
       </div>
     </div>
   </div>
@@ -94,16 +104,20 @@
         <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
         <p class="text-gray-600">{project.description}</p>
       </div>
+      <a
+        href={project.github}
+        class="text-blue-400 hover:text-blue-500 underline font-bold"
+        target="_blank">GitHubで見る</a
+      >
     {/each}
   </div>
   <div class="bg-white p-6 rounded-lg shadow-md">
     <h2 class="text-2xl font-semibold mb-4">私について</h2>
     <p class="text-gray-600">
-      私は情熱的な開発者で、意義のある革新的なソリューションを作成することを心から愛しています。
-      私の目標は、技術とユーザーエクスペリエンスのギャップを埋めることです。
+      私は情熱的な開発者です、常に思考して日々アイディアをノートに書き留めています。私の目標は、私のレベルと理想のギャップを埋めることです。
     </p>
     <p class="text-gray-600">
-      自由な時間には、新しい技術を探求したり、読書を楽しんだり、美味しいコーヒーを楽しんでいます。
+      自由な時間には、新しい技術を探求したり、コミュニティの仲間と議論をして楽しんでいます。
     </p>
   </div>
 </section>
@@ -168,4 +182,9 @@
   @tailwind base;
   @tailwind utilities;
   /* @tailwind components; */
+  :global(.twemoji-icon) {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+  }
 </style>

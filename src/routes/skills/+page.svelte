@@ -2,144 +2,199 @@
   let skills = [
     // 既存のスキルにカテゴリIDを追加
     {
-      name: "JavaScript",
+      name: "HTML (WHATWG)",
       level: 5,
-      reason: "多数のフロントエンド・バックエンドプロジェクトを実装。",
-      github: "https://github.com/yourusername/js-project-example",
+      reason:
+        "WHATWG の HTML Living Standardです、W3Cから移管されてから使い始めました。僕がiPadで初めて書いたHTMLを貼っときます。中３の頃に書きました。外部のAPIを利用したメールフォームなどを設置していました。",
+      categoryId: "frontend",
+      github: "https://github.com/doremire/first-html",
+    },
+    {
+      name: "CSS",
+      level: 4,
+      reason:
+        "厳密に僕が初めて書いた言語です、最近はライブラリで済ますので直で書くことは少なくなりました。Tipsなどをあまり知らないので4で",
+      categoryId: "frontend",
+    },
+    {
+      name: "Sass",
+      level: 2,
+      reason:
+        "CSSのプリプロセッサ（CSSメタ言語）です、あまり使いこなせてないです。最近はあまり使いません。",
+      categoryId: "frontend",
+    },
+    {
+      name: "JavaScript",
+      level: 3,
+      reason:
+        "知れば知る程奥深い言語です、様々な歴史を持ってます。奥が深すぎて全ては使いこなせてないので3で",
       categoryId: "frontend",
     },
     {
       name: "React",
-      level: 4,
-      reason: "小規模なアプリケーションの実装を行った。",
-      github: "https://github.com/yourusername/react-project-example",
-      categoryId: "frontend",
-    },
-    {
-      name: "Node.js",
-      level: 4,
-      reason: "APIサーバーやツールの開発に4年間使用。",
-      github: "https://github.com/yourusername/nodejs-project-example",
-      categoryId: "backend",
-    },
-    {
-      name: "Python",
-      level: 3,
-      reason: "データ解析やスクリプト作成に使用。2年の経験。",
-      github: "https://github.com/yourusername/python-project-example",
-      categoryId: "backend",
-    },
-    {
-      name: "Vue.js",
-      level: 3,
-      reason: "複数の小規模から中規模のアプリケーションを作成。2年の経験。",
-      github: "https://github.com/yourusername/vue-project-example",
+      level: 2,
+      reason: "あまり自信がないです、基本的なことしかできません",
       categoryId: "frontend",
     },
     {
       name: "Svelte",
       level: 2,
-      reason: "いくつかのプロジェクトで試験的に使用。1年未満の経験。",
-      github: "https://github.com/yourusername/svelte-project-example",
+      reason:
+        "このページもSvelteで開発しています、とても良いライブラリです。(「コンパイラだろ」とのツッコミが来そうですが)",
+      github: "https://github.com/doremire/portfolio-v3",
       categoryId: "frontend",
     },
     {
-      name: "GraphQL",
-      level: 3,
-      reason: "API開発とクライアントの統合に使用。1.5年の経験。",
-      github: "https://github.com/yourusername/graphql-project-example",
-      categoryId: "backend",
-    },
-    {
-      name: "Docker",
-      level: 4,
+      name: "Three.js",
+      level: 2,
       reason:
-        "アプリケーションのコンテナ化やCI/CDのパイプラインで使用。3年の経験。",
-      github: "https://github.com/yourusername/docker-project-example",
-      categoryId: "devops",
+        "WebGLの3Dライブラリです、初めて作ったポートフォリオに採用しました。経験はありますが、3Dを扱うので数学の知識が必須です。",
+      categoryId: "frontend",
     },
     {
       name: "TypeScript",
-      level: 4,
-      reason: "型安全を求める多数のプロジェクトで使用。3年の経験。",
-      github: "https://github.com/yourusername/typescript-project-example",
+      level: 3,
+      reason: "使いやすい言語です、これも3で",
       categoryId: "frontend",
     },
     {
-      name: "MongoDB",
+      name: "Python",
+      level: 1,
+      reason: "基本的なことしかできません",
+      categoryId: "backend",
+    },
+    {
+      name: "PHP",
+      level: 3,
+      reason: "簡単な掲示板などを作成しました、CVEから目が離せません",
+      categoryId: "backend",
+    },
+    {
+      name: "C lang",
+      level: 2,
+      reason:
+        "僕が初めて触った明確なプログラミング言語です。簡単なツールを作成できます。その程度",
+      github: "https://github.com/doremire/cli-clock",
+      categoryId: "programming",
+    },
+    {
+      name: "MySQL",
+      level: 2,
+      reason: "不自由なくは使えます",
+      categoryId: "database",
+    },
+    {
+      name: "Docker",
+      level: 1,
+      reason: "あまり知見が無いです。",
+      categoryId: "devops",
+    },
+    {
+      name: "Red Hat Enterprise Linux",
+      level: 1,
+      reason:
+        "Red Hatの企業用(エンタープライズ)のサーバーOSです、短期間ですが触る機会がありました。",
+      categoryId: "server",
+    },
+    {
+      name: "Ubuntu Server",
       level: 3,
       reason:
-        "NoSQLデータベースとして、複数のアプリケーションで使用。2年の経験。",
-      github: "https://github.com/yourusername/mongodb-project-example",
-      categoryId: "database",
+        "誰でも使えて安定な動作をするUbuntuのサーバー用のOSです、普段はCLIで使っています。不自由なく使えると言っても差し支えないでしょう。",
+      categoryId: "server",
+    },
+    {
+      name: "デザイン",
+      level: 2,
+      reason: "そもそもデザインセンスがあまり無い、理論でどうにかしています。",
+      categoryId: "others",
+    },
+    {
+      name: "サイバーセキュリティ",
+      level: 1,
+      reason: "これも奥が深いというよりは広義すぎるので、全体評価では1です。",
+      categoryId: "others",
+    },
+    {
+      name: "CTF",
+      level: 1,
+      reason: "弱いです",
+      categoryId: "others",
+    },
+    {
+      name: "競技プログラミング",
+      level: 0,
+      reason: "僕の思考力が試されています。",
+      categoryId: "others",
+    },
+    {
+      name: "Linux",
+      level: 2,
+      reason: "メインPCのOSです。流石にLPICとかは取れないかもしれません。",
+      categoryId: "others",
     },
   ];
 
   let categories = [
     { id: "frontend", name: "フロントエンド" },
     { id: "backend", name: "バックエンド" },
+    { id: "programming", name: "プログラミング" },
     { id: "database", name: "データベース" },
     { id: "devops", name: "DevOps/運用" },
-    { id: "architecture", name: "アーキテクチャ" },
+    { id: "server", name: "Server" },
+    { id: "others", name: "その他" },
   ];
 
   let levels = [
     {
       level: 1,
-      description: "初級: 基本的な知識のみ。プロジェクトでの使用経験なし。",
+      description: "基本的な知識のみ。",
     },
     {
       level: 2,
-      description:
-        "中級: プロジェクトでの使用経験あり。サポートが必要な場合も。",
+      description: "その技術を使ったプロジェクトを作った。",
     },
     {
       level: 3,
-      description: "上級: 複数プロジェクトでの経験。難問も自力で解決可能。",
+      description: "複数プロジェクトでの経験。難問も自力で解決可能。",
     },
     {
       level: 4,
-      description: "専門家: 豊富な経験と深い知識。ベストプラクティスに精通。",
+      description: "豊富な経験と深い知識。ベストプラクティスに精通。",
     },
     {
       level: 5,
-      description: "マスター: 複数年の経験。活発な開発。",
+      description: "複数年の経験。難問を容易に解決可能。多くの技を知っている。",
     },
   ];
 
   let skillsByYear = [
     {
-      year: 2020,
+      year: 2022,
       skills: [
         {
-          name: "JavaScript",
-          level: 5,
-          reason: "多数のフロントエンド・バックエンドプロジェクトを実装。",
+          name: "HTML/CSS",
+          reason: "入門時代",
         },
         {
-          name: "React",
-          level: 4,
+          name: "C",
+          reason: "簡単なプログラムの作成",
+        },
+        {
+          name: "JavaScript",
           reason: "小規模なアプリケーションの実装を行った。",
         },
         // ... 他のスキル
       ],
     },
     {
-      year: 2020,
+      year: 2023,
       skills: [
         {
-          name: "JavaScript",
-          level: 5,
-          reason: "多数のフロントエンド・バックエンドプロジェクトを実装。",
-          
+          name: "Server",
+          reason: "Linux Serverを構築",
         },
         // ... 他のスキル
-      ],
-    },
-    {
-      year: 2021,
-      skills: [
-        // ... スキルの詳細
       ],
     },
     // ... 他の年
@@ -151,6 +206,9 @@
     <header class="text-center mb-16">
       <h1 class="text-5xl font-bold">技術スキル</h1>
       <p class="text-xl mt-4">私のスキルセットとそのレベルをご覧ください。</p>
+      <p class="text-xl mt-4 opacity-10 font-bold">
+        (嘘なく厳しく自己採点します)
+      </p>
     </header>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -217,11 +275,14 @@
                     <span class="text-yellow-400 font-bold">{skill.level}</span>
                   </div>
                   <p class="text-sm mb-2">根拠: {skill.reason}</p>
-                  <a
-                    href={skill.github}
-                    class="text-blue-400 hover:text-blue-500 underline"
-                    target="_blank">GitHubで見る</a
-                  >
+                  {#if skill.github}
+                    <!-- GitHubプロジェクトが存在する場合に表示 -->
+                    <a
+                      href={skill.github}
+                      class="text-blue-400 hover:text-blue-500 underline"
+                      target="_blank">GitHubで見る</a
+                    >
+                  {/if}
                 </div>
               {/each}
             </div>
