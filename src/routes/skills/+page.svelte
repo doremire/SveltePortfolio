@@ -23,6 +23,12 @@
         "CSSのプリプロセッサ（CSSメタ言語）です、あまり使いこなせてないです。最近はあまり使いません。",
       categoryId: "frontend",
     },
+     {
+      name: "Tailwind CSS",
+      level: 2,
+      reason: "このページにも使用しています。基本的なスタイリングは出来ます。",
+      categoryId: "frontend",
+    }, 
     {
       name: "JavaScript",
       level: 3,
@@ -76,6 +82,12 @@
         "僕が初めて触った明確なプログラミング言語です。簡単なツールを作成できます。その程度",
       github: "https://github.com/doremire/cli-clock",
       categoryId: "programming",
+    },
+    {
+        name: "Bash Script",
+        level: 2,
+        reason: "これと言った実績は無いですが、Dotfilesのセットアップスプリクトなどを書きました。",
+        categoryId: "programming",
     },
     {
       name: "MySQL",
@@ -133,6 +145,19 @@
       reason: "メインPCのOSです。流石にLPICとかは取れないかもしれません。",
       categoryId: "others",
     },
+    {
+        name: "VScode",
+        level: 3,
+        reason: "初めて触ったIDEです、現在は使用していません。過去に拡張機能を開発、公開しています。",
+        categoryId: "environment"
+    },
+    {
+        name: "Neovim",
+        level: 2,
+        reason: "メインエディタです、基本的にラップトップで作業するのでキーボードで完結するのは素晴らしいです。",
+        categoryId: "environment",
+        special: true,
+    },
   ];
 
   let categories = [
@@ -143,6 +168,7 @@
     { id: "devops", name: "DevOps/運用" },
     { id: "server", name: "Server" },
     { id: "others", name: "その他" },
+    { id: "environment", name: "環境" }
   ];
 
   let levels = [
@@ -258,38 +284,38 @@
         </ul>
       </aside>
 
-      <div class="lg:col-span-2">
-        {#each categories as category}
-          <div class="mb-12 bg-gray-800 p-6 rounded-lg shadow-md">
+<div class="lg:col-span-2">
+    {#each categories as category}
+        <div class="mb-12 bg-gray-800 p-6 rounded-lg shadow-md">
             <h3 class="text-3xl font-semibold mb-5 text-indigo-500">
-              {category.name}
+                {category.name}
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {#each skills.filter((skill) => skill.categoryId === category.id) as skill}
-                <div class="bg-gray-700 p-4 rounded-lg">
-                  <h4 class="text-2xl font-semibold mb-2 text-indigo-400">
-                    {skill.name}
-                  </h4>
-                  <div class="flex items-center mb-2">
-                    <span class="mr-2">レベル:</span>
-                    <span class="text-yellow-400 font-bold">{skill.level}</span>
-                  </div>
-                  <p class="text-sm mb-2">根拠: {skill.reason}</p>
-                  {#if skill.github}
-                    <!-- GitHubプロジェクトが存在する場合に表示 -->
-                    <a
-                      href={skill.github}
-                      class="text-blue-400 hover:text-blue-500 underline"
-                      target="_blank">GitHubで見る</a
-                    >
-                  {/if}
-                </div>
-              {/each}
+                {#each skills.filter((skill) => skill.categoryId === category.id) as skill}
+                         <div class={skill.special ? "bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-700 text-white p-4 rounded-lg" : "bg-gray-700 p-4 rounded-lg"}>
+                        <h4 class="text-2xl font-semibold mb-2 text-indigo-400">
+                            {skill.name}
+                        </h4>
+                        <div class="flex items-center mb-2">
+                            <span class="mr-2">レベル:</span>
+                            <span class="text-yellow-400 font-bold">{skill.level}</span>
+                        </div>
+                        <p class="text-sm mb-2">根拠: {skill.reason}</p>
+                        {#if skill.github}
+                            <!-- GitHubプロジェクトが存在する場合に表示 -->
+                            <a
+                                href={skill.github}
+                                class="text-blue-400 hover:text-blue-500 underline"
+                                target="_blank">GitHubで見る</a
+                            >
+                        {/if}
+                    </div>
+                {/each}
             </div>
-          </div>
-        {/each}
-      </div>
-    </div>
+        </div>
+    {/each}
+</div>
+
   </div>
 </section>
 
